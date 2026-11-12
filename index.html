@@ -43,58 +43,63 @@
         }
 
         .device-container {
-            position: relative;
-            width: 220px;
-            height: 440px;
-            margin: 20px;
-            transition: all 0.3s ease;
-        }
+    position: relative;
+    width: 220px;
+    
+    aspect-ratio: 1179 / 2556; 
+    margin: 20px;
+    transition: all 0.3s ease;
+}
 
-        .device-container:hover {
-            transform: translateY(-15px) scale(1.03);
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
-        }
+    .device-container:hover {
+        transform: translateY(-15px) scale(1.03);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    }
 
-        .device-frame {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #222;
-            border-radius: 36px;
-            padding: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+    .device-frame {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #1a1a1a;
+        border-radius: 42px; 
+        padding: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 0 0 1px #333; 
+        overflow: hidden;
+    }
 
-        .device-screen {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            border-radius: 28px;
-            overflow: hidden;
-        }
+    .device-screen {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 32px; 
+        overflow: hidden;
+    }
 
-        .device-container.phone .device-notch {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 24px;
-            background-color: #222;
-            border-bottom-left-radius: 14px;
-            border-bottom-right-radius: 14px;
-            z-index: 10;
-        }
 
-        .device-screenshot {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scale(1);
-            transform-origin: center;
-        }
+    .device-container.phone .device-notch {
+        position: absolute;
+        top: 15px; 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 25%; 
+        height: 20px;
+        background-color: #1a1a1a;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        z-index: 10;
+    }
+
+    .device-screenshot {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block; 
+        transform: scale(1);
+        transform-origin: center;
+    }
 
         .device-container.laptop {
             width: 510px;
@@ -683,7 +688,7 @@
     <section id="design-projects" class="py-20 px-4 bg-green-50">
         <div class="container mx-auto">
             <h2 class="section-title text-3xl font-bold mb-12 flex items-center text-green-700">
-                Graphic Design
+                UI & Graphic Design
                 <span class="text-sm font-normal text-gray-500 ml-4 hidden md:inline">(Click on a project to view details)</span>
             </h2>
             
@@ -749,6 +754,22 @@
                     <div class="mt-4 text-center">
                         <h3 class="text-xl font-semibold text-gray-800">Hi-Fi Workshop Poster</h3>
                         <p class="project-description mt-2">Our club's workshop posters that I designed with hours of editing with the Figma Pen tool. (the quickest design i've made yet!)</p>
+                    </div>
+                </div>
+
+                <!-- KDI GBM 3 Poster -->
+                <div class="flex flex-col items-center mb-12 reveal project-card w-full md:w-[45%]" 
+                     data-title="GBM #3 Poster"
+                     data-image="kdi_gbm3.png" 
+                     data-synopsis="A poster I designed to boost engagement for KDI's recurring GBM and guest speaker meetings."
+                     data-colors="#FF7926,#FFFFFF, #A6C999">
+                    <div class="w-64 h-84 bg-gray-200 rounded-xl overflow-hidden shadow-lg border border-gray-300 relative flex items-center justify-center">
+                        <img src="kdi_gbm3.png" class="w-full h-full object-cover" alt="KDI Workshop Poster" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                        <span style="display:none;" class="text-sm text-gray-500 font-mono text-center p-2">[Insert Workshop Poster]</span>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-xl font-semibold text-gray-800">KDI GBM #3 Poster</h3>
+                        <p class="project-description mt-2">Our club's 3rd GBM Speaker Poster, made with Figma.</p>
                     </div>
                 </div>
             </div>
@@ -824,8 +845,76 @@
                 <span class="text-sm font-normal text-gray-500 ml-4 hidden md:inline">(Click on a project to view details)</span>
             </h2>
             
+            <!-- ReVision -->
+                <div class="flex flex-col items-center mb-12 reveal project-card"
+                    data-title="ReVision" 
+                    data-image="rv_athletic.png, rv_personal.png, rv_auto.png"
+                    data-synopsis="A web app designed to aid the visually impaired with navigating new and known environments. Built with a team of 3 at Knight Hacks 9 utilizing the Mapbox API, text-to-speech, and iPhone LiDAR for instantaneous object detection and proximity alerts.">
+                   
+                    <div class="flex flex-wrap justify-center gap-4">
+
+                        <div class="device-container phone">
+                            <div class="device-frame">
+                            
+                                <div class="device-screen">
+                                    <img src="rv_db.png" class="device-screenshot" alt="ReVision" />
+                                </div>
+
+                            </div>
+                        </div>
+                    
+
+                        <div class="device-container phone">
+                            <div class="device-frame">
+                                    
+                                <div class="device-screen">
+                                    <img src="rv_tasks.png" class="device-screenshot" alt="ReVision" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="device-container phone">
+                            <div class="device-frame">
+                                    
+                                <div class="device-screen">
+                                    <img src="rv_auto.png" class="device-screenshot" alt="ReVision" />
+                                </div>
+                            </div>
+                
+                        </div>
+
+                        <div class="device-container phone">
+                            <div class="device-frame">
+                                    
+                                <div class="device-screen">
+                                    <img src="rv_athletic.png" class="device-screenshot" alt="ReVision" />
+                                </div>
+                            </div>
+                
+                        </div>
+
+                        <div class="device-container phone">
+                            <div class="device-frame">
+                                    
+                                <div class="device-screen">
+                                    <img src="rv_personal.png" class="device-screenshot" alt="ReVision" />
+                                </div>
+                            </div>
+                
+                        </div>
+
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <h3 class="text-xl font-semibold text-gray-800">ReVision</h3>
+                        <p class="project-description mt-2">A web app designed to aid the visually impaired with navigating new and known environments.</p>
+                    </div>
+                </div>
+
+            <!--  
             <div class="flex flex-wrap justify-center">
-                <!-- PantryPal -->
+               
                 <div class="flex flex-col items-center mb-12 reveal project-card" 
                      data-title="PantryPal" 
                      data-image="pantrypalhome.png" 
@@ -843,32 +932,14 @@
                         <p class="project-description mt-2">A sleek recipe and pantry management app letting you track ingredients, plan meals, and reduce food waste.</p>
                     </div>
                 </div>
+            -->
 
-                <!-- ZoTography Mobile -->
-                <div class="flex flex-col items-center mb-12 reveal project-card"
-                     data-title="ZoTography Mobile" 
-                     data-image="Untitled design (7).png" 
-                     data-synopsis="A combined, mobile app version of my portfolio and photography business site showcasing my talents in app development and photography. It serves as a unified digital business card and booking platform.">
-                    <div class="device-container phone">
-                        <div class="device-frame">
-                            <div class="device-notch"></div>
-                            <div class="device-screen">
-                                <img src="Untitled design (7).png" class="device-screenshot" alt="ZoTography Mobile" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <h3 class="text-xl font-semibold text-gray-800">ZoTography Mobile</h3>
-                        <p class="project-description mt-2">A combined, mobile app version of my portfolio and photography buisness site showcasing my talents in app development and photography.</p>
-                    </div>
-                </div>
-
-                <!-- NavVision -->
+            <!-- NavVision -->
                 <div class="flex flex-col items-center mb-12 reveal project-card"
                      data-title="NavVision" 
                      data-image="nv6.png, navvision_actual.png"
                      data-synopsis="A web app designed to aid the visually impaired with navigating new and known environments. Built with a team of 3 at Knight Hacks 9 utilizing the Mapbox API, text-to-speech, and iPhone LiDAR for instantaneous object detection and proximity alerts.">
-                   <div class="flex gap-4">
+                   <div class="flex flex-wrap justify-center gap-4">
                      <div class="device-container phone">
                         <div class="device-frame">
                             <div class="device-notch"></div>
@@ -897,7 +968,7 @@
                      data-title="Style Up" 
                      data-image="styleup1.png" 
                      data-synopsis="A mobile app designed to alleviate the stress in finding new outfit combinations by storing your previous outfits, utilizing machine learning to recommend new ones based on current scenarios and create fun challenges for creating new outfits.">
-                    <div class="flex gap-4">
+                    <div class="flex flex-wrap justify-center gap-4">
                         <div class="device-container phone">
                             <div class="device-frame">
                                 <div class="device-notch"></div>
@@ -918,6 +989,25 @@
                     <div class="mt-4 text-center">
                         <h3 class="text-xl font-semibold text-gray-800">Style Up</h3>
                         <p class="project-description mt-2">A mobile app designed to alleviate the stress in finding new outfit combinations by storing your previous outfits, utilizing machiene learning to recommend new ones.</p>
+                    </div>
+                </div>
+
+                <!-- ZoTography Mobile -->
+                <div class="flex flex-col items-center mb-12 reveal project-card"
+                     data-title="ZoTography Mobile" 
+                     data-image="Untitled design (7).png" 
+                     data-synopsis="A combined, mobile app version of my portfolio and photography business site showcasing my talents in app development and photography. It serves as a unified digital business card and booking platform.">
+                    <div class="device-container phone">
+                        <div class="device-frame">
+                            <div class="device-notch"></div>
+                            <div class="device-screen">
+                                <img src="Untitled design (7).png" class="device-screenshot" alt="ZoTography Mobile" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-xl font-semibold text-gray-800">ZoTography Mobile</h3>
+                        <p class="project-description mt-2">A combined, mobile app version of my portfolio and photography buisness site showcasing my talents in app development and photography.</p>
                     </div>
                 </div>
 
@@ -983,29 +1073,34 @@
 
                 <!-- UKnighted -->
                 <div class="flex flex-col items-center mb-12 reveal project-card"
-                     data-title="UKnighted" 
-                     data-image="uknightedsignup.png" 
-                     data-synopsis="A centralized web application for UCF Students to connect with peers, find study groups, and alleviate feelings of loneliness on campus. Designed specifically to assist students living off-campus with unfamiliar roommates. Designed and prototyped in Figma for my HCI course.">
-                    <div class="flex flex-col items-center gap-4">
+                    data-title="UKnighted" 
+                    data-image="uknightedsignup.png" 
+                    data-synopsis="A centralized web application for UCF Students to connect with peers, find study groups, and alleviate feelings of loneliness on campus. Designed specifically to assist students living off-campus with unfamiliar roommates. Designed and prototyped in Figma for my HCI course.">
+                    
+                    <div class="flex flex-wrap justify-center gap-4">
+
                         <div class="device-container laptop">
                             <div class="device-frame">
-                                <div class="device-notch"></div>
+                                
                                 <div class="device-screen">
                                     <img src="uknightedsignup.png" class="device-screenshot" alt="UKnighted" />
                                 </div>
                                 <div class="device-base"></div>
                             </div>
                         </div>
+
                         <div class="device-container laptop">
                             <div class="device-frame">
-                                <div class="device-notch"></div>
+                                
                                 <div class="device-screen">
                                     <img src="uknightedhome.png" class="device-screenshot" alt="UKnighted" />
                                 </div>
+
                                 <div class="device-base"></div>
                             </div>
                         </div>
                     </div>
+
                     <div class="mt-4 text-center">
                         <h3 class="text-xl font-semibold text-gray-800">UKnighted</h3>
                         <p class="project-description mt-2">A centralized platform for UCF Students to connect with peers, find study groups, and allieviate feelings of loneliness on campus.</p>
@@ -1316,16 +1411,22 @@
                 <a href="https://mathematicalgod.itch.io/second-fate" target="_blank" rel="noopener noreferrer" class="text-teal-600 underline hover:text-teal-800">Link to Download Game (Unity must be installed)</a>
             </p>
             
+            <p class="text-gray-600 font-bold text-lg mt-2 mb-6">CAP3104 - Foundations of Human Computer Interactions:</p>
+            <p class="text-gray-600 text-lg mt-2 mb-6">- ReVision –
+                <a href="https://www.figma.com/proto/cam1Pxs5PnWThyoruLkJC6/cap3104-prototype-2?node-id=18-729&p=f&t=neIZGAJQ7UwBpekN-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=18%3A729" target="_blank" rel="noopener noreferrer" class="text-teal-600 underline hover:text-teal-800">Link to Figma Prototype</a>
+            </p>
+
             <p class="text-gray-600 font-bold text-lg mt-2 mb-6">CAP4102 - User Experience and Design:</p>
             <p class="text-gray-600 text-lg mt-2 mb-6">- UKnighted –
                 <a href="https://www.figma.com/proto/dvN7V2ZDzf7gVzPg0vju85/uknighted-prototype-v2?node-id=2069-410&p=f&t=XbOZgkBrZKyDE931-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2069%3A410" target="_blank" rel="noopener noreferrer" class="text-teal-600 underline hover:text-teal-800">Link to Figma Prototype</a>
             </p>
             
+            <!--
             <p class="text-gray-600 font-bold text-lg mt-2 mb-6">CDA3103C - Computer Logic and Organization:</p>
             <p class="text-gray-600 text-lg mt-2 mb-6">- MIPS Simulator –
                  <a href="project.c" target="_blank" rel="noopener noreferrer" class="text-teal-600 underline hover:text-teal-800">Project (C File)</a>
             </p>
-            
+        -->
             <p class="text-gray-600 font-bold text-lg mt-2 mb-6">COP3402C - System Software:</p>
             <p class="text-gray-600 text-lg mt-2 mb-6">- CodeGen: Compiler Project –
                 <a href="CodeGen1.cpp" target="_blank" rel="noopener noreferrer" class="text-teal-600 underline hover:text-teal-800">CodeGen1 (C++ File),</a>
