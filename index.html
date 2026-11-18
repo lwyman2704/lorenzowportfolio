@@ -1633,6 +1633,46 @@
             modal.querySelector('div').classList.add('scale-95');
             document.body.style.overflow = ''; // Restore background scrolling
         }
+
+        // 4) Portfolio Visit Notifier (Cloudflare Worker -> ntfy)
+        (function trackVisit() {
+            if (localStorage.getItem('is_owner') === 'true') return;
+            if (sessionStorage.getItem('visit_logged')) return;
+            sessionStorage.setItem('visit_logged', 'true');
+
+            const params = new URLSearchParams(window.location.search);
+            const srcTag = params.get('src');
+
+            // Remove ?src=... from the address bar so the URL stays clean
+            if (srcTag) {
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+
+            const referrer = document.referrer;
+            let source = 'Direct / Copy-Paste';
+
+            if (srcTag) {
+                source = `Tagged Link (${srcTag})`;
+            } else if (referrer) {
+                try {
+                    const host = new URL(referrer).hostname.replace('www.', '');
+                    source = `Referral (${host})`;
+                } catch {
+                    source = `Referral (${referrer})`;
+                }
+            }
+
+            fetch('https://portfolio-alerts.lwyman2704.workers.dev', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                keepalive: true,
+                body: JSON.stringify({
+                    source,
+                    page: window.location.pathname,
+                    device: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop'
+                })
+            }).catch(() => {});
+        })();
     </script>
 </body>
 </html>
